@@ -1,0 +1,131 @@
+<main>
+	<div class="cart_order width">
+		<form action="actions.php" method="POST">
+		    _VALID_
+			<input type="hidden" name="paymentMethod">
+			<input type="hidden" name="resday">
+			<input type="hidden" name="passive_product" value="_PASSIVE_PRODUCTS_">
+			<input type="hidden" name="reshour" class="clock__input">
+			<div class="order">
+				<div class="customer">
+					<h2 class="customer__info">Պատվիրատուի տվյալները</h2>
+					<ul class="customer__list">
+						<li class="customer__item">
+							<p>Անուն Ազգանուն *</p>
+							<input type="text" class="customer__name" name="customer__name" placeholder="Անուն Ազգանուն" required value="_NAME_">
+						</li>
+						<li class="customer__item">
+							<p>Հեռախոս *</p>
+							<input type="text" class="customer__firstPhone" name="customer__firstPhone" placeholder="+374 (99) 999999" required value="_PHONE_">
+						</li>
+						<li class="customer__item">
+							<p>Հավելյալ հեռախոս *</p>
+							<input type="text" class="customer__firstPhone" name="customer__secondPhone" placeholder="+374 (99) 999999" required value="_PHONE2_">
+						</li>
+						<li class="customer__item">
+							<p>Էլ. հասցե`</p>
+							<input type="email" class="customer__email" name="customer__email" placeholder="Էլ. հասցե`" value="_MAIL_">
+						</li>
+						<li class="calendar_wrapper">
+							<p class="calendar__value">Առաքման օրը *</p>
+							<div class="calendar">
+								<label class="calendar__icon"> <i class="far fa-calendar-alt"></i> 
+									<input type="text" class="calendar__input">
+								</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="recipient">
+					<p class="recipient__info">Ստացողի տվյալները</p>
+					<ul class="customer__list">
+						<li class="customer__item">
+							<p>Անուն Ազգանուն</p>
+							<input type="text" class="recipient__name" name="recipient__name" placeholder="Անուն Ազգանուն" value="_RESN_">
+						</li>
+						<li class="customer__item">
+							<p>Հեռախոս</p>
+							<input type="text" class="recipient__firstPhone" name="recipient__firstPhone" placeholder="+374 (99) 999999" value="_RESP_">
+						</li>
+						<li class="customer__item">
+							<p>Հասցե *</p>
+							<input type="text" class="recipient__firstPhone" name="recipient__address" placeholder="Հասցե" required>
+						</li>
+						<li class="customer__item">
+							<p>Շրջանը / Մարզը *</p>
+							<div class="state">
+								<p class="state__title">Ընտրել</p>
+								<input type="text" class="state__input" value="" name="state__input">
+								<div class="state__wrapper">
+									<div class="state__wrapper_container">
+										<ul class="state__container">_STATES_</ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="customer__item">
+							<p>Ժամը *</p>
+							<div class="state">
+								<div class="clock">
+									<p class="clock__title">Ընտրել</p>
+									<div class="clock__wrapper">
+										<div class="clock__wrapper_container">
+											<ul class="clock__container">
+												<li class="clock__item" data-id="09:00-09:30">09:00-09:30</li>
+												<li class="clock__item" data-id="09:30-10:00">09:30-10:00</li>
+												<li class="clock__item" data-id="10:00-10:30">10:00-10:30</li>
+												<li class="clock__item" data-id="10:30-11:00">10:30-11:00</li>
+												<li class="clock__item" data-id="11:00-11:30">11:00-11:30</li>
+												<li class="clock__item" data-id="11:30-12:00">11:30-12:00</li>
+												<li class="clock__item" data-id="12:00-12:30">12:00-12:30</li>
+												<li class="clock__item" data-id="12:30-13:00">12:30-13:00</li>
+												<li class="clock__item" data-id="13:00-13:30">13:00-13:30</li>
+												<li class="clock__item" data-id="13:30-14:00">13:30-14:00</li>
+												<li class="clock__item" data-id="14:00-14:30">14:00-14:30</li>
+												<li class="clock__item" data-id="14:30-15:00">14:30-15:00</li>
+												<li class="clock__item" data-id="15:00-15:30">15:00-15:30</li>
+												<li class="clock__item" data-id="15:30-16:00">15:30-16:00</li>
+												<li class="clock__item" data-id="16:00-16:30">16:00-16:30</li>
+												<li class="clock__item" data-id="16:30-17:00">16:30-17:00</li>
+												<li class="clock__item" data-id="17:00-17:30">17:00-17:30</li>
+												<li class="clock__item" data-id="17:30-18:00">17:30-18:00</li>
+												<li class="clock__item" data-id="18:00-18:30">18:00-18:30</li>
+												<li class="clock__item" data-id="18:30-19:00">18:30-19:00</li>
+												<li class="clock__item" data-id="19:00-19:30">19:00-19:30</li>
+												<li class="clock__item" data-id="19:30-20:00">19:30-20:00</li>
+												<li class="clock__item" data-id="20:00-20:30">20:00-20:30</li>
+												<li class="clock__item" data-id="20:30-21:00">20:30-21:00</li>
+												<li class="clock__item" data-id="21:00-21:30">21:00-21:30</li>
+												<li class="clock__item" data-id="21:30-22:00">21:30-22:00</li>
+												<li class="clock__item" data-id="22:00-22:30">22:00-22:30</li>
+												<li class="clock__item" data-id="22:30-23:00">22:30-23:00</li>
+												<li class="clock__item" data-id="23:00-23:30">23:00-23:30</li>
+												<li class="clock__item" data-id="23:30-24:00">23:30-24:00</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cart">
+				<h2 class="cart__title">Զամբյուղ</h2>
+				<div class="cart__product">_ITEMS_</div>
+				<div class="payable">
+					<div class="payable__container">
+						<h3 class="payable__title">Վճարման եղանակ *</h3>
+						<div class="payable__box">
+							<label>
+								<input type="radio" name="payable" value="card">Վճարային Քարտ (Arca, Visa, Maestro, MasterCard, American Express)</label>
+							<label>
+								<input type="radio" name="payable" value="idram">ԻԴՐԱՄ վճարային համակարգ</label>
+							<label>
+								<input type="radio" name="payable" value="cash">Կանխիկ վճարում</label>
+						</div>
+					</div>
+				</div>_BUTTON_</div>
+		</form>
+	</div>
+</main>

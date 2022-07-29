@@ -1,0 +1,73 @@
+<main>
+	<div class="cart_order width">
+		<div class="order">
+			<div class="customer">
+				<h2 class="customer__info">Պատվիրատուի տվյալները</h2>
+				<ul class="customer__list">
+					<li class="customer__item">
+						<p>Անուն Ազգանուն</p>
+						<p>_CUSTOMERNAME_</p>
+					</li>
+					<li class="customer__item">
+						<p>Հեռախոս *</p>
+						<p>_CUSTOMERPHONE1_</p>
+					</li>
+					<li class="customer__item">
+						<p>Հավելյալ հեռախոս</p>
+						<p>_CUSTOMERPHONE2_</p>
+					</li>
+					<li class="customer__item">
+						<p>Էլ. հասցե`</p>
+						<p>_CUSTOMEREMAIL_</p>
+					</li>
+					<li class="customer__item">
+						<p>Վճարման տարբերակ`</p>
+						<p>_CUSTOMERPAYMENT_</p>
+					</li>
+				</ul>
+			</div>
+			<div class="recipient">
+				<p class="recipient__info">Ստացողի տվյալները</p>
+				<ul class="customer__list">
+					<li class="customer__item">
+						<p>Անուն Ազգանուն</p>
+						<p>_RESNAME_</p>
+					</li>
+					<li class="customer__item">
+						<p>Հեռախոս</p>
+						<p>_RESPHONE_</p>
+					</li>
+					<li class="customer__item">
+						<p>Հասցե</p>
+						<p>_RESMAIL_</p>
+					</li>
+					<li class="customer__item">
+						<p>Շրջանը / Մարզը</p>
+						<p>_RESSTATE_</p>
+					</li>
+					<li class="customer__item">
+						<p>Առաքման օրը և ժամը</p>
+                        <p>_RESDATE_</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="cart">
+			<h2 class="cart__title">Զամբյուղ</h2>
+			<div class="cart__product">_ITEMS_</div>
+			<ul>
+				<li class="cart__general">Գինը։ <span class="cart__products_price">_TOTAL_</span> _CUR_</li>
+				<li class="cart__general">Առաքում / <span class="cart__delivery_city">_STATE_</span>  <span class="cart__delivery_price">_DELVAL_</span> _CUR_</li>
+				<li class="cart__general">Վճարման ենթակա: <span class="cart__general_price">_SUBTOTAL_</span> _CUR_</li>
+			</ul>
+			<div class="cart__button">
+				<a href="/confirmOrder" style="margin-right: 10px;">
+					<button class="cart__btn">Հաստատել</button>
+				</a>
+				<a href="/newOrder" style="font-size: 14px;">
+					<button class="cart__btn">Փոփոխել տվյալները</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</main>
