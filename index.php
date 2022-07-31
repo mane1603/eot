@@ -32,8 +32,8 @@ Route::add('/eot_api/register', function(){
         header('HTTP/1.0 400 Bad Request;Content-type: application:json');
         echo json_encode(["message" => "invalid request body"]);
     }else{
-        $credentials["username"] = mysql_real_escape_string($credentials["username"]);
-        $credentials["password"] = mysql_real_escape_string($credentials["password"]);
+        // $credentials["username"] = mysql_real_escape_string($credentials["username"]);
+        // $credentials["password"] = mysql_real_escape_string($credentials["password"]);
         $login = new User("api.eot.global", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=", "https://api.eot.global/rest/1/786wf8ydq2yundnt/");
         $login->register($credentials["username"], $credentials["password"]);
     }
