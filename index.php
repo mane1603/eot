@@ -28,8 +28,12 @@ Route::add('/eot_api', function(){
 Route::add('/eot_api/register', function(){
     global $bitrixCodes;
     $credentials = json_decode(file_get_contents("php://input"), 1);
-    if(!isset($credentials["username"]) || !isset($credentials["password"])){
-        header('HTTP/1.0 400 Bad Request;Content-type: application:json');
+    if(
+        !isset($credentials["username"]) || !isset($credentials["password"]) ||
+        $credentials["username"] == "" || $credentials["password"] == ""
+        ){
+        header('HTTP/1.0 400 Bad Request');
+        header('Content-type: application:json');
         echo json_encode(["message" => "invalid request body"]);
     }else{
         // $credentials["username"] = mysql_real_escape_string($credentials["username"]);
