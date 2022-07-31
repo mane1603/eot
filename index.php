@@ -20,22 +20,29 @@ $globalUri = "";
 $_SESSION["currency"] =  (isset($_SESSION["currency"])) ? $_SESSION["currency"] : "AMD";
 
 $currency = $_SESSION["currency"];
-Route::add('/', function(){
-   $auth = new Auth("techforest.cfd", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=");
+Route::add('/eot_api', function(){
+   $auth = new Auth("api.eot.global", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=");
    $auth->validate();
 }, 'post');
 
-Route::add('/register', function(){
+Route::add('/eot_api/register', function(){
     global $bitrixCodes;
     $credentials = json_decode(file_get_contents("php://input"), 1);
-    $login = new User("techforest.cfd", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=", "https://api.eot.global/rest/1/786wf8ydq2yundnt/");
-    $login->register($credentials["username"], $credentials["password"]);
+    if(!isset($credentials["username"]) || !isset($credentials["password"])){
+        header('HTTP/1.0 400 Bad Request;Content-type: application:json');
+        echo json_encode(["message" => "invalid request body"]);
+    }else{
+        $credentials["username"] = mysql_real_escape_string($credentials["username"]);
+        $credentials["password"] = mysql_real_escape_string($credentials["password"]);
+        $login = new User("api.eot.global", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=", "https://api.eot.global/rest/1/786wf8ydq2yundnt/");
+        $login->register($credentials["username"], $credentials["password"]);
+    }
 }, 'post');
 
-Route::add('/login', function(){
+Route::add('/eot_api/login', function(){
     global $bitrixCodes;
     $credentials = json_decode(file_get_contents("php://input"), 1);
-    $login = new User("techforest.cfd", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=", "https://api.eot.global/rest/1/786wf8ydq2yundnt/");
+    $login = new User("api.eot.global", "bGS6lzFqvvSQASdLbOxatm7/Vk7mLQyzqaS34Q4oR1ew=", "https://api.eot.global/rest/1/786wf8ydq2yundnt/");
     $login->login($credentials["username"], $credentials["password"]);
     // $bitrix = new Bitrix("https://api.eot.global/rest/1/786wf8ydq2yundnt/");
 }, 'post');
